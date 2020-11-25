@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Test Application Gateway</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>TestService gateway</h1>
+            <h2>
+                <span th:text="'Message: ' + ${message}"></span>
+            </h2>
+        </div>
+
+        <form th:action="@{/makeTask}" th:object="${request}" method="post">
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label>Type</label>
+                    <label>
+                        <input type="text" class="form-control" th:field="*{type}">
+                    </label>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Length</label>
+                    <label>
+                        <input type="number" class="form-control" th:field="*{length}">
+                    </label>
+                </div>
+            </div>
+            <p><input type="submit" value="Submit"/></p>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> CreateTime </th>
+                    <th> Status </th>
+                    <th> Type </th>
+                    <th> Length </th>
+                    <th> Payload </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td><p th:text=" ${task.getId()} "></p></td>
+                    <td><p th:text=" ${task.getCreateTime()} "></p></td>
+                    <td><p th:text=" ${task.getStatus()} "></p></td>
+                    <td><p th:text=" ${task.getType()} "></p></td>
+                    <td><p th:text=" ${task.getLength()} "></p></td>
+                    <td><p th:text=" ${task.getPayload()} "></p></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

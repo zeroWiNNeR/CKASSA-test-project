@@ -21,3 +21,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/eureka-server/target/
+/gateway/target/
+/eureka-server/eureka-server.iml
+/gateway/gateway.iml
+/generate-api/generate-api.iml
+/generate-api/target/
+/test-service/target/
+/test-service/test-service.iml
+/.idea/
