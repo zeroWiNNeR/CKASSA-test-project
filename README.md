@@ -6,7 +6,7 @@ Test project
 * Spring Web
 * Spring Data
 * PostgreSQL database
-* Spring Cloud Ribbon
+* Spring Cloud LoadBalancer
 
 #### To build this application use:
 

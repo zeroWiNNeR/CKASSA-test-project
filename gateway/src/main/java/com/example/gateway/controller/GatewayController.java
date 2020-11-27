@@ -41,7 +41,7 @@ public class GatewayController {
     @GetMapping("/")
     public String main(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("message", "Hello, " + user.getUsername());
-        model.addAttribute("request", new FrontendRequest());
+        model.addAttribute("frontendRequest", new FrontendRequest());
         model.addAttribute("tasks", taskRepo.findAll());
 
         return "index";

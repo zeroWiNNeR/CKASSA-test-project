@@ -3,18 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>Test Application Gateway</title>
-
     <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-
 </head>
 
 <body>
-    <main role="main" class="container">
+    <main role="main">
 
-        <div class="starter-template">
+        <div>
             <h1>TestService gateway</h1>
             <h2>
                 <span th:text="'Message: ' + ${message}"></span>
@@ -22,17 +18,17 @@
         </div>
 
         <form th:action="@{/makeTask}" th:object="${frontendRequest}" method="post">
-            <div class="form-row">
-                <div class="col-md-6 form-group">
+            <div>
+                <div>
                     <label>Type</label>
                     <label>
-                        <input type="text" class="form-control" th:field="*{type}">
+                        <input type="text" th:field="*{type}">
                     </label>
                 </div>
-                <div class="col-md-6 form-group">
+                <div>
                     <label>Length</label>
                     <label>
-                        <input type="number" class="form-control" th:field="*{length}">
+                        <input type="number" th:field="*{length}">
                     </label>
                 </div>
             </div>
