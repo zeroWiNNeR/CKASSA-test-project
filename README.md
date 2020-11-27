@@ -8,8 +8,8 @@ Test project
 * PostgreSQL database
 * Spring Cloud Ribbon
 
-#### To run this application use:
+#### To build this application use:
 
 ```bash
-mvn clean package spring-boot:run
+mvn clean package
 ```
