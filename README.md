@@ -2,11 +2,11 @@
 Test project
 
 ### Technology stack:
-* Spring Boot;
-* Spring Web;
-* Spring Data;
-* PostgreSQL database;
-* Spring Cloud LoadBalancer
+* Spring Boot
+* Spring Web
+* Spring Data
+* PostgreSQL database
+* Spring Cloud Ribbon
 
 #### To run this application use:
 
