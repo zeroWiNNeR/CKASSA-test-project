@@ -37,7 +37,6 @@
 
     <modules>
         <module>generate-api</module>
-        <module>eureka-server</module>
         <module>gateway</module>
         <module>test-service</module>
     </modules>

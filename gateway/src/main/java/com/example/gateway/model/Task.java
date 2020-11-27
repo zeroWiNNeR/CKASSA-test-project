@@ -39,6 +39,15 @@ public class Task {
 
     }
 
+    public Task(Long id, String type, Integer length, TaskStatus status, LocalDateTime createTime, String payload) {
+        this.id = id;
+        this.type = type;
+        this.length = length;
+        this.status = status;
+        this.createTime = createTime;
+        this.payload = payload;
+    }
+
     public Task(String type, Integer length, TaskStatus status, LocalDateTime createTime, String payload) {
         this.type = type;
         this.length = length;

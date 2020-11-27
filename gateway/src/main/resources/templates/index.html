@@ -21,7 +21,7 @@
             </h2>
         </div>
 
-        <form th:action="@{/makeTask}" th:object="${request}" method="post">
+        <form th:action="@{/makeTask}" th:object="${frontendRequest}" method="post">
             <div class="form-row">
                 <div class="col-md-6 form-group">
                     <label>Type</label>
@@ -51,7 +51,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="task : ${tasks}">
+                <tr th:each="task : ${tasks}" id="tasks-list">
                     <td><p th:text=" ${task.getId()} "></p></td>
                     <td><p th:text=" ${task.getCreateTime()} "></p></td>
                     <td><p th:text=" ${task.getStatus()} "></p></td>

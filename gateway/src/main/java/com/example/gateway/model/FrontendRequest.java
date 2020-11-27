@@ -8,7 +8,7 @@ import java.io.Serializable;
 /*
  * Created by Aleksei Vekovshinin on 25.11.2020
  */
-public class Request implements Serializable {
+public class FrontendRequest implements Serializable {
 
     @NotEmpty
     private String type;
@@ -17,11 +17,10 @@ public class Request implements Serializable {
     @Max(100)
     private Integer length;
 
-    public Request() {
-
+    public FrontendRequest() {
     }
 
-    public Request(String type, Integer length) {
+    public FrontendRequest(String type, Integer length) {
         this.type = type;
         this.length = length;
     }

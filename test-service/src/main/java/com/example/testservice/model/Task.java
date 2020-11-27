@@ -3,6 +3,9 @@ package com.example.testservice.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 /*
@@ -17,12 +20,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="task_generator")
     private Long id;
 
+    @NotEmpty(message = "Type can't be empty!")
     @Column(name = "type")
     private String type;
 
+    @Min(value = 0, message = "Length must be >= 0")
+    @Max(value = 100, message = "Length must be <= 100")
     @Column(name = "length")
     private Integer length;
 
+    @NotEmpty(message = "Status can't be empty!")
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private TaskStatus status;
@@ -36,7 +43,15 @@ public class Task {
 
 
     public Task() {
+    }
 
+    public Task(Long id, String type, Integer length, TaskStatus status, LocalDateTime createTime, String payload) {
+        this.id = id;
+        this.type = type;
+        this.length = length;
+        this.status = status;
+        this.createTime = createTime;
+        this.payload = payload;
     }
 
     public Task(String type, Integer length, TaskStatus status, LocalDateTime createTime, String payload) {

@@ -9,7 +9,6 @@ public class TestServiceResponse {
 
     private Task task;
 
-
     public TestServiceResponse() {
     }
 

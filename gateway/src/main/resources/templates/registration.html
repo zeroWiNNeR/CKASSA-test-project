@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация - Gateway</title>
+    <link rel="stylesheet" href="/static/css/form_login-registration.css">
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <p class="info">Регистрация</p>
+        <form action="/registration" method="post">
+            <div><label> Username : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div th:each="role : ${roles}">
+                <label th:text="${role}">ROLE_USER</label>
+                <label>
+                    <input type="checkbox" th:name="${role}" th:value="${role}" th:checked="${user.roles.contains(role)}" />
+                </label>
+            </div>
+            <input type="submit" value="Sign Up"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

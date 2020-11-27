@@ -19,7 +19,7 @@ public class TestServiceImpl implements TestService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final TaskRepo taskRepo;
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
     @Autowired
     public TestServiceImpl(TaskRepo taskRepo, RestTemplate restTemplate) {
         this.taskRepo = taskRepo;
@@ -27,12 +27,12 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public TestServiceResponse makeExternalRequest(Long id) {
+    public TestServiceResponse makeExternalRequest(Long id, String type, Integer length) {
         Task task = taskRepo.getById(id);
 
-        logger.info("Make External Request: " + task.getType() + " " + task.getLength() + " " + id);
+        logger.info("Make External Request: " + type + " " + length);
         String generatedValue = restTemplate.getForObject(
-                "http://localhost:46000/generate?type="+task.getType()+"&&length="+task.getLength(),
+                "http://localhost:46000/generate?type=" + type + "&&length=" + length,
                 String.class
         );
 
